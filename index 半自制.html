@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>微金所</title>
+    <link rel="short icon" href="favicon.ico">
+    <link href="lib/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/index.css">
+    <!--[if lt IE 9]>
+    <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<!--顶部开始-->
+<header class="wjs_topBar hidden-xs hidden-sm">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2">
+                <a href="#" class="wjs_app">
+                    <span class="wjs_icon wjs_icon_phone"></span>
+                    <span>手机微金所</span>
+                    <span class="glyphicon glyphicon-chevron-down"></span>
+                    <img src="images/code.jpg" alt="">
+                </a>
+            </div>
+            <div class="col-md-5">
+                <span class="wjs_icon wjs_icon_tel"></span>
+                <span>4006-89-4006（服务时间：9:00~21:00） 联系在线客服</span>
+            </div>
+            <div class="col-md-3">
+                <span>常见问题</span>
+                <span class="m_l">财富问答</span>
+            </div>
+            <div class="col-md-2">
+                <a href="#" class="btn btn-danger btn-xs wjs_register">免费注册</a>
+                <a href="#" class="m_l">登陆</a>
+            </div>
+        </div>
+    </div>
+</header>
+<!--顶部结束-->
+<!--导航开始-->
+<nav class="navbar wjs-navbar">
+    <div class="container">
+        <!-- 移动端显示 -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">
+                <span class="wjs_icon wjs_icon_logo"></span>
+                <span class="wjs_icon wjs_icon_word"></span>
+            </a>
+        </div>
+
+        <!-- 菜单项目 -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">我要投资 <span class="sr-only">(current)</span></a></li>
+                <li><a href="#">我要投资</a></li>
+                <li><a href="#">我要投资</a></li>
+                <li><a href="#">我要投资</a></li>
+                <li><a href="#">我要投资</a></li>
+                <li><a href="#">我要投资</a></li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right hidden-sm">
+                <li><a href="#">Link</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!--导航结束-->
+<!--轮播图开始-->
+<div id="wjs_swiper" class="carousel slide wjs_banner" data-ride="carousel">
+    <!-- 小圆点 -->
+    <ol class="carousel-indicators" id="inner-pop">
+        <!--<li data-target="#wjs_swiper" data-slide-to="0" class="active"></li>
+        <li data-target="#wjs_swiper" data-slide-to="1"></li>
+        <li data-target="#wjs_swiper" data-slide-to="2"></li>
+        <li data-target="#wjs_swiper" data-slide-to="3"></li>-->
+    </ol>
+
+    <!-- 轮播的内容-->
+    <div class="carousel-inner" role="listbox" id="inner">
+
+    </div>
+
+    <!-- Controls -->
+    <a class="left carousel-control" href="#wjs_swiper" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#wjs_swiper" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div
+<!--图片-->
+<script id="sliderWrapper" type="text/template">
+        <%for(var i=0;i<data.length;i++){%>
+            <div class="<%=(i==0?'item active':'item')%>">
+                    <%if(isMobile){%>
+                    <a href="#">
+                        <img src="<%=data[i].img%>"  class="small">
+                    </a>
+                    <%}else{%>
+                    <a href="#" class="big" style="background-image:<%=data[i].bac%>"></a>
+                    <%}%>
+            </div>
+        <%}%>
+</script>
+<!--焦点-->
+<script id="sliderpoper" type="text/template">
+	  <!--<%for(var i=0;i<data.lenth;i++){%>
+	  	<li class="<%=(i==0?'active':'')%>" data-target="#wjs_swiper" data-slide-to="<%=i%>"></li>
+	  <%}%>-->
+	  {{each data}}
+		<li data-target="#wjs_swiper" data-slide-to="{{$index}}" class="{{$index==0?'active':''}}"></li>
+	  {{/each}}
+</script>
+<!--轮播图结束-->
+<!--交易保障-->
+<div class="wjs_info hidden-xs">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4 col-sm-6">
+				<a href="#">
+					<div class="media">
+						<span class="media-left wjs_icon wjs_icon_e903"></span>
+						<div class="media-body">
+							<h4 class="media-heading">支付交易保障</h4>
+							<p>银联支付全程保障资金安全</p>
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="col-md-4 col-sm-6">
+				<a href="#">
+					<div class="media">
+						<span class="media-left wjs_icon wjs_icon_e903"></span>
+						<div class="media-body">
+							<h4 class="media-heading">支付交易保障</h4>
+							<p>银联支付全程保障资金安全</p>
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="col-md-4 col-sm-6">
+				<a href="#">
+					<div class="media">
+						<span class="media-left wjs_icon wjs_icon_e903"></span>
+						<div class="media-body">
+							<h4 class="media-heading">支付交易保障</h4>
+							<p>银联支付全程保障资金安全</p>
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="col-md-4 col-sm-6">
+				<a href="#">
+					<div class="media">
+						<span class="media-left wjs_icon wjs_icon_e903"></span>
+						<div class="media-body">
+							<h4 class="media-heading">支付交易保障</h4>
+							<p>银联支付全程保障资金安全</p>
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="col-md-4 col-sm-6">
+				<a href="#">
+					<div class="media">
+						<span class="media-left wjs_icon wjs_icon_e903"></span>
+						<div class="media-body">
+							<h4 class="media-heading">支付交易保障</h4>
+							<p>银联支付全程保障资金安全</p>
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="col-md-4 col-sm-6">
+				<a href="#">
+					<div class="media">
+						<span class="media-left wjs_icon wjs_icon_e903"></span>
+						<div class="media-body">
+							<h4 class="media-heading">支付交易保障</h4>
+							<p>银联支付全程保障资金安全</p>
+						</div>
+					</div>
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
+<!--交易保障结束-->
+<!--预约-->
+<div class="wjs_book">
+	<div class="container">
+		<div class="pull-left">
+			<span class="wjs_icon wjs_icon_e906">
+                现在有 273 人在排队，累计预约交易成功 7571 次。 什么是预约投标？
+			</span>
+			<a href="#" class="book_link">立即预约</a>
+		</div>
+		<div class="pull-right hidden-xs">
+			<span class="wjs_icon wjs_icon_e905">
+				微金所企业宣传片
+			</span>
+		</div>
+	</div>	
+</div>
+<!--预约结束-->
+<!--产品交易-->
+<div class="wjs_product">
+	<div class="container">
+		<div class="wjs_product_tabs_parent">
+			<ul class="nav wjs-nav-tabs" role="tablist">
+				<li role="presentation" class="active"><a href="#recommend" aria-controls="recommend" role="tab" data-toggle="tab">特别推荐</a></li>
+				<li role="presentation"><a href="#invest1" aria-controls="invest1" role="tab" data-toggle="tab">微投资</a></li>
+				<li role="presentation"><a href="#invest2" aria-controls="invest2" role="tab" data-toggle="tab">微投资</a></li>
+				<li role="presentation"><a href="#invest3" aria-controls="invest3" role="tab" data-toggle="tab">微投资</a></li>
+				<li role="presentation"><a href="#invest4" aria-controls="invest4" role="tab" data-toggle="tab">微投资</a></li>
+				<li role="presentation"><a href="#invest5" aria-controls="invest5" role="tab" data-toggle="tab">微投资</a></li>
+				<li role="presentation"><a href="#invest6" aria-controls="invest6" role="tab" data-toggle="tab">微投资</a></li>		
+			</ul>
+		</div>
+		
+		<div class="tab-content">
+			<div role="tabpanel" class="tab-pane active" id="recommend">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-4 col-sm-6 col-xs-12">
+							<a href="#" class="product_box exp">
+								<!--右边-->
+								<div class="product_right">
+									<p>
+										<b>8</b>
+										<sub>%</sub>
+									</p>
+									<p>年利率</p>
+								</div>
+								<!--左边-->
+								<div class="product_left">
+									<h3>新手体验0723期</h3>
+									<div class="col-xs-6">
+										<p>起投金额</p>
+										<p>0.1万</p>
+									</div>
+									<div class="col-xs-6">
+										<p>起投金额</p>
+										<p>0.1万</p>
+									</div>
+									<div class="col-xs-6">
+										<p>起投金额</p>
+										<p>0.1万</p>
+									</div>
+									<div class="col-xs-6">
+										<p>起投金额</p>
+										<p>0.1万</p>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="col-md-4 col-sm-6 col-xs-12">
+							<a href="#" class="product_box">
+								<!--右边-->
+								<div class="product_right">
+									<p>
+										<b>8</b>
+										<sub>%</sub>
+									</p>
+									<p>年利率</p>
+								</div>
+								<!--左边-->
+								<div class="product_left">
+									<h3>新手体验0723期</h3>
+									<div class="col-xs-6">
+										<p>起投金额</p>
+										<p>0.1万</p>
+									</div>
+									<div class="col-xs-6">
+										<p>起投金额</p>
+										<p>0.1万</p>
+									</div>
+									<div class="col-xs-6">
+										<p>起投金额</p>
+										<p>0.1万</p>
+									</div>
+									<div class="col-xs-6">
+										<p>起投金额</p>
+										<p>0.1万</p>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="col-md-4 col-sm-6 col-xs-12">
+							<a href="#" class="product_box">
+								<!--右边-->
+								<div class="product_right">
+									<p>
+										<b>8</b>
+										<sub>%</sub>
+									</p>
+									<p>年利率</p>
+								</div>
+								<!--左边-->
+								<div class="product_left">
+									<h3>新手体验0723期</h3>
+									<div class="col-xs-6">
+										<p>起投金额</p>
+										<p>0.1万</p>
+									</div>
+									<div class="col-xs-6">
+										<p>起投金额</p>
+										<p>0.1万</p>
+									</div>
+									<div class="col-xs-6">
+										<p>起投金额</p>
+										<p>0.1万</p>
+									</div>
+									<div class="col-xs-6">
+										<p>起投金额</p>
+										<p>0.1万</p>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="col-md-4 col-sm-6 col-xs-12">
+							<a href="#" class="product_box">
+								<!--右边-->
+								<div class="product_right">
+									<p>
+										<b>8</b>
+										<sub>%</sub>
+									</p>
+									<p>年利率</p>
+								</div>
+								<!--左边-->
+								<div class="product_left">
+									<h3>新手体验0723期</h3>
+									<div class="col-xs-6">
+										<p>起投金额</p>
+										<p>0.1万</p>
+									</div>
+									<div class="col-xs-6">
+										<p>起投金额</p>
+										<p>0.1万</p>
+									</div>
+									<div class="col-xs-6">
+										<p>起投金额</p>
+										<p>0.1万</p>
+									</div>
+									<div class="col-xs-6">
+										<p>起投金额</p>
+										<p>0.1万</p>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="col-md-4 col-sm-6 col-xs-12">
+							<a href="#" class="product_box">
+								<!--右边-->
+								<div class="product_right">
+									<p>
+										<b>8</b>
+										<sub>%</sub>
+									</p>
+									<p>年利率</p>
+								</div>
+								<!--左边-->
+								<div class="product_left">
+									<h3>新手体验0723期</h3>
+									<div class="col-xs-6">
+										<p>起投金额</p>
+										<p>0.1万</p>
+									</div>
+									<div class="col-xs-6">
+										<p>起投金额</p>
+										<p>0.1万</p>
+									</div>
+									<div class="col-xs-6">
+										<p>起投金额</p>
+										<p>0.1万</p>
+									</div>
+									<div class="col-xs-6">
+										<p>起投金额</p>
+										<p>0.1万</p>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="col-md-4 col-sm-6 col-xs-12">
+							<a href="#" class="product_box">
+								<!--右边-->
+								<div class="product_right">
+									<p>
+										<b>8</b>
+										<sub>%</sub>
+									</p>
+									<p>年利率</p>
+								</div>
+								<!--左边-->
+								<div class="product_left">
+									<h3>新手体验0723期</h3>
+									<div class="col-xs-6">
+										<p>起投金额</p>
+										<p>0.1万</p>
+									</div>
+									<div class="col-xs-6">
+										<p>起投金额</p>
+										<p>0.1万</p>
+									</div>
+									<div class="col-xs-6">
+										<p>起投金额</p>
+										<p>0.1万</p>
+									</div>
+									<div class="col-xs-6">
+										<p>起投金额</p>
+										<p>0.1万</p>
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div role="tabpanel" class="tab-pane" id="invest1">
+				Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.
+			</div>
+			<div role="tabpanel" class="tab-pane" id="invest2">
+				Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.
+			</div>
+			<div role="tabpanel" class="tab-pane" id="invest3">
+				Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork biodiesel fixie etsy retro mlkshk vice blog. Scenester cred you probably haven't heard of them, vinyl craft beer blog stumptown. Pitchfork sustainable tofu synth chambray yr.
+			</div>
+			<div role="tabpanel" class="tab-pane" id="invest4">
+				Trust fund seitan letterpress, keytar raw denim keffiyeh etsy art party before they sold out master cleanse gluten-free squid scenester freegan cosby sweater. Fanny pack portland seitan DIY, art party locavore wolf cliche high life echo park Austin. Cred vinyl keffiyeh DIY salvia PBR, banh mi before they sold out farm-to-table VHS viral locavore cosby sweater. Lomo wolf viral, mustache readymade thundercats keffiyeh craft beer marfa ethical. Wolf salvia freegan, sartorial keffiyeh echo park vegan.
+			</div>
+			<div role="tabpanel" class="tab-pane" id="invest5">
+				This plugin extends the tabbed navigation component to add tabbable areas.
+			</div>
+			<div role="tabpanel" class="tab-pane" id="invest6">
+				微投资
+			</div>
+		</div>
+	</div>
+</div>
+<!--产品交易-->
+<!--新闻部分-->
+<div class="wjs_news">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-2 col-md-offset-2">
+				<h3>全部新闻</h3>
+			</div>
+			<div class="col-md-1">
+				<div class="wjs_new_line hidden-sm hidden-xs"></div>
+					<ul class="nav wjs_news_tabs" role="tablist">
+						<li role="presentation" class="active"><a href="#news" aria-controls="news" role="tab" data-toggle="tab" class="wjs_icon wjs_icon_e90e"></a></li>
+						<li role="presentation"><a href="#papers" aria-controls="papers" role="tab" data-toggle="tab" class="wjs_icon wjs_icon_e90f"></a></li>
+						<li role="presentation"><a href="#sings" aria-controls="sings" role="tab" data-toggle="tab" class="wjs_icon wjs_icon_e910"></a></li>
+						<li role="presentation"><a href="#watchs" aria-controls="watchs" role="tab" data-toggle="tab" class="wjs_icon wjs_icon_e911"></a></li>
+					</ul>				
+			</div>
+			<div class="col-md-7 wjs_news_content">
+				<div class="tab-content">
+					<div role="tabpanel" class="tab-pane active" id="news">
+						<ul>
+							<li>
+								<a href="#">2016-01-22【微还款】一周还款公告2016年1月18日-1月24日</a>
+							</li>
+							<li>
+								<a href="#">2016-01-22【微还款】一周还款公告2016年1月18日-1月24日</a>
+							</li>
+							<li>
+								<a href="#">2016-01-22【微还款】一周还款公告2016年1月18日-1月24日</a>
+							</li>
+							<li>
+								<a href="#">2016-01-22【微还款】一周还款公告2016年1月18日-1月24日</a>
+							</li>
+							<li>
+								<a href="#">2016-01-22【微还款】一周还款公告2016年1月18日-1月24日</a>
+							</li>
+							<li>
+								<a href="#">2016-01-22【微还款】一周还款公告2016年1月18日-1月24日</a>
+							</li>
+							<li>
+								<a href="#">2016-01-22【微还款】一周还款公告2016年1月18日-1月24日</a>
+							</li>
+							<li>
+								<a href="#">2016-01-22【微还款】一周还款公告2016年1月18日-1月24日</a>
+							</li>
+							<li>
+								<a href="#">2016-01-22【微还款】一周还款公告2016年1月18日-1月24日</a>
+							</li>
+						</ul>
+					</div>
+					<div role="tabpanel" class="tab-pane" id="papers">
+						666
+					</div>
+					<div role="tabpanel" class="tab-pane" id="sings">
+						777
+					</div>
+					<div role="tabpanel" class="tab-pane" id="watchs">
+						888
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!--新闻部分结束-->
+<!--合作伙伴-->
+
+
+<script src="lib/jquery/jquery.js"></script>
+<script src="lib/bootstrap/js/bootstrap.js"></script>
+<!--<script src="./lib/template-native.js"></script>-->
+<script src="node_modules/art-template/lib/template-web.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/index.js" type="text/javascript" charset="utf-8"></script>
+<!--<script src="js/index 自制.js" type="text/javascript" charset="utf-8"></script>-->
+</body>
+</html>

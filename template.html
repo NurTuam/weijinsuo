@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>模板</title>
+    <link href="./lib/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <style>
+        .wjs-navbar {
+            background-color: #fff;
+            border: none;
+        }
+        .wjs-navbar .navbar-brand {
+            color: #777;
+        }
+        .wjs-navbar .navbar-brand:hover,
+        .wjs-navbar .navbar-brand:focus {
+            color: #5e5e5e;
+            background-color: transparent;
+        }
+        .wjs-navbar .navbar-text {
+            color: #777;
+        }
+        .wjs-navbar .navbar-nav > li > a {
+            color: #666;
+            background-color:#fff;
+            border-bottom:3px solid transparent;
+        }
+        .wjs-navbar .navbar-nav > li > a:hover,
+        .wjs-navbar .navbar-nav > li > a:focus {
+            color: #666;
+            background-color: transparent;
+            border-bottom:3px solid #e92322;
+        }
+        .wjs-navbar .navbar-nav > .active > a,
+        .wjs-navbar .navbar-nav > .active > a:hover,
+        .wjs-navbar .navbar-nav > .active > a:focus {
+            color: #666;
+            background-color: #fff;
+            border-bottom:3px solid #e92322;
+        }
+        .wjs-navbar .navbar-nav > .disabled > a,
+        .wjs-navbar .navbar-nav > .disabled > a:hover,
+        .wjs-navbar .navbar-nav > .disabled > a:focus {
+            color: #ccc;
+            background-color: transparent;
+        }
+        .wjs-navbar .navbar-toggle {
+            border-color: #ddd;
+        }
+        .wjs-navbar .navbar-toggle:hover,
+        .wjs-navbar .navbar-toggle:focus {
+            background-color: #ddd;
+        }
+        .wjs-navbar .navbar-toggle .icon-bar {
+            background-color: #888;
+        }
+        .wjs-navbar .navbar-collapse,
+        .wjs-navbar .navbar-form {
+            border-color: #e7e7e7;
+        }
+        .wjs-navbar .navbar-nav > .open > a,
+        .wjs-navbar .navbar-nav > .open > a:hover,
+        .wjs-navbar .navbar-nav > .open > a:focus {
+            color: #555;
+            background-color: #e7e7e7;
+        }
+        @media (max-width: 767px) {
+            .wjs-navbar .navbar-nav .open .dropdown-menu > li > a {
+                color: #777;
+            }
+            .wjs-navbar .navbar-nav .open .dropdown-menu > li > a:hover,
+            .wjs-navbar .navbar-nav .open .dropdown-menu > li > a:focus {
+                color: #333;
+                background-color: transparent;
+            }
+            .wjs-navbar .navbar-nav .open .dropdown-menu > .active > a,
+            .wjs-navbar .navbar-nav .open .dropdown-menu > .active > a:hover,
+            .wjs-navbar .navbar-nav .open .dropdown-menu > .active > a:focus {
+                color: #555;
+                background-color: #e7e7e7;
+            }
+            .wjs-navbar .navbar-nav .open .dropdown-menu > .disabled > a,
+            .wjs-navbar .navbar-nav .open .dropdown-menu > .disabled > a:hover,
+            .wjs-navbar .navbar-nav .open .dropdown-menu > .disabled > a:focus {
+                color: #ccc;
+                background-color: transparent;
+            }
+        }
+        .wjs-navbar .navbar-link {
+            color: #777;
+        }
+        .wjs-navbar .navbar-link:hover {
+            color: #333;
+        }
+        .wjs-navbar .btn-link {
+            color: #777;
+        }
+        .wjs-navbar .btn-link:hover,
+        .wjs-navbar .btn-link:focus {
+            color: #333;
+        }
+        .wjs-navbar .btn-link[disabled]:hover,
+        fieldset[disabled] .wjs-navbar .btn-link:hover,
+        .wjs-navbar .btn-link[disabled]:focus,
+        fieldset[disabled] .wjs-navbar .btn-link:focus {
+            color: #ccc;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar wjs-navbar">
+    <div class="container">
+        <!-- 移动端显示 -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Brand</a>
+        </div>
+
+        <!-- 菜单项目 -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">我要投资 <span class="sr-only">(current)</span></a></li>
+                <li><a href="#">我要投资</a></li>
+                <li><a href="#">我要投资</a></li>
+                <li><a href="#">我要投资</a></li>
+                <li><a href="#">我要投资</a></li>
+                <li><a href="#">我要投资</a></li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">Link</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<script src="./lib/jquery/jquery.js"></script>
+<script src="./lib/bootstrap/js/bootstrap.js"></script>
+</body>
+</html>

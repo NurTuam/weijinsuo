@@ -1,0 +1,19 @@
+{
+  "name": "wjs",
+  "version": "1.0.0",
+  "description": "项目",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "he",
+  "license": "ISC",
+  "dependencies": {
+    "art-template": "^4.13.1",
+    "bootstrap": "^3.3.7",
+    "jquery": "^1.12.4"
+  }
+}
